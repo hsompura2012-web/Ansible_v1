@@ -57,4 +57,4 @@
         state: present     
 
    - name: Load catalogue schema
-     ansible.builtin.command: mongosh --host 34.228.170.150 </app/db/master-data.js
+     ansible.builtin.command: mongosh --host 34.228.170.150 </app/schema/catalogue.js
