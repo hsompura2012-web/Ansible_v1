@@ -3,10 +3,10 @@
   become: true
   tasks:
     - name: Install Nginx
-      apt:
+      package:
         name: nginx
         state: present
-        
+
     - name: Start and enable Nginx service
       service:
         name: nginx
