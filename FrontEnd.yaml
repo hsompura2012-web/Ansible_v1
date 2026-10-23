@@ -18,6 +18,11 @@
         path: /usr/share/nginx/html/*
         state: absent
 
+    - name: Recursively remove directory
+      ansible.builtin.file:
+        path: /usr/share/nginx/html
+        state: directory
+
     - name: Download the frontend content
       ansible.builtin.get_url:
         url: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
@@ -29,7 +34,7 @@
         src: /tmp/frontend.zip
         dest: /usr/share/nginx/html/
         remote_src: yes
-        
+
     - name: Restart service httpd, in all cases
       ansible.builtin.service:
         name: httpd
