@@ -12,9 +12,10 @@
         name: nginx
         state: started
         enabled: yes
+
     - name: Recursively remove directory
       ansible.builtin.file:
-        path: /usr/share/nginx/html/
+        path: /usr/share/nginx/html/*
         state: absent
 
     - name: Download the frontend content
@@ -28,6 +29,7 @@
         src: /tmp/frontend.zip
         dest: /usr/share/nginx/html/
         remote_src: yes
+        
     - name: Restart service httpd, in all cases
       ansible.builtin.service:
         name: httpd
