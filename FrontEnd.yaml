@@ -35,7 +35,7 @@
         dest: /usr/share/nginx/html/
         remote_src: yes
 
-    - name: Restart service httpd, in all cases
+    - name: Restart service nginx, in all cases
       ansible.builtin.service:
-        name: httpd
+        name: nginx
         state: restarted
