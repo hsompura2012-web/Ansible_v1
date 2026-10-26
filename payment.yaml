@@ -8,6 +8,7 @@
            - python3
            - gcc
            - python3-devel
+           - make
          state: present
    
     - name: Add roboshop user
