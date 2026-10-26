@@ -5,9 +5,8 @@
     - name: install python3 level package
       ansible.builtin.package:
          name: 
-           - python3
+           - python3.11-devel
            - gcc
-           - python3-devel
            - make
          state: present
    
