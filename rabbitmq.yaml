@@ -20,4 +20,6 @@
     
     - name: change username and password for rabbitmq
       ansible.builtin.shell: rabbitmqctl add_user roboshop roboshop123
+
+    - name: set permissions for roboshop user  
       ansible.builtin.shell: rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
