@@ -31,7 +31,7 @@
     - name: Build shipping service
       args:
         chdir: /app
-      ansible.builtin.command: mvn clean package
+      ansible.builtin.shell: mvn clean package
       ansible.builtin.shell: mv target/shipping-1.0.jar shipping.jar
 
     - name: copy service file
