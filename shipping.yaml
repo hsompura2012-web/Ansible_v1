@@ -28,6 +28,12 @@
         dest: /app
         remote_src: yes
         
+    - name: Build shipping service
+      args:
+        chdir: /app
+      ansible.builtin.command: mvn clean package
+      ansible.builtin.shell: mv target/shipping-1.0.jar shipping.jar
+
     - name: copy service file
       ansible.builtin.copy:
         src: files/shipping.service
